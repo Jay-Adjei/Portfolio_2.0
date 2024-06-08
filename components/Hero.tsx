@@ -38,7 +38,8 @@ const Hero = () => {
 
               <p className='text-center md:tracking-wider mb-4 md:text-lg
                 lg:text-2xl'>
-                Hi, I&apos;m Japhet, a Next.js Developer based in Ghana.
+                Hi, I&apos;m Japhet, a Front-End Developer based in Ghana,
+                and this is my journey.
               </p>
 
               <a href="#about">
