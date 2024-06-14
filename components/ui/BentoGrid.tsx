@@ -1,17 +1,21 @@
 'use client'
 
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { IoCopyOutline } from "react-icons/io5";
 
 import Lottie from "react-lottie";
 
 import { cn } from "@/utils/cn";
+import { images } from "@/data/images";
 
 
 import { BackgroundGradientAnimation } from "./GradientBg";
 import {GlobeDemo} from "./GridGlobe";
 import animationData from "@/data/confetti.json";
 import MagicButton from "./MagicButton";
+import {
+    SiHtml5, SiJavascript, SiNextdotjs, SiReact, SiNodedotjs, SiTailwindcss, SiTypescript, SiMongodb
+} from "react-icons/si";
 
 export const BentoGrid = ({
   className,
@@ -51,10 +55,9 @@ export const BentoGridItem = ({
   titleClassName?: string;
   spareImg?: string;
 }) => {
-  const leftLists = ["ReactJS", "NextJS", "Typescript"];
-  const rightLists = ["ReactNative", "AWS", "MongoBD"];
 
   const [copied, setCopied] = useState(false);
+  const textWidthRef = useRef(null);
 
   const defaultOptions = {
     loop: copied,
@@ -71,6 +74,41 @@ export const BentoGridItem = ({
     setCopied(true);
     setTimeout(() => setCopied(false),3000)
   };
+
+  const StackName =({logoName}:{logoName:string}) =>{
+    return (
+    <div className='border border-white/[0.1] rounded-lg relative top-0'>
+      <p className='font-serif text-xl text-center'>{logoName}</p>
+    </div>
+    )
+  }
+  const [hoveredLogo, setHoveredLogo] = useState('');
+  
+  const handleMouseEnter = (logoName) => {
+    setHoveredLogo(logoName);
+  };
+
+  const handleMouseLeave = () => {
+    setHoveredLogo('');
+  };
+
+  useEffect(() => {
+    if (textWidthRef.current) { // Check within useEffect
+      const textWidth = textWidthRef.current.clientWidth;
+      textWidthRef.current.style.width = `${textWidth}px`;
+    }
+  }, [hoveredLogo]);
+
+  const icons = [
+    { name: 'HTML', icon: <SiHtml5 size={35} onMouseEnter={() => handleMouseEnter('HTML')} onMouseLeave={handleMouseLeave} /> },
+    { name: 'TailwindCSS', icon: <SiTailwindcss onMouseEnter={() => handleMouseEnter('TailwindCSS')} onMouseLeave={handleMouseLeave} size={35} /> },
+    { name: 'JavaScript', icon: <SiJavascript size={35} onMouseEnter={() => handleMouseEnter('JavaScript')} onMouseLeave={handleMouseLeave} /> },
+    { name: 'TypeScript', icon: <SiTypescript size={35} onMouseEnter={() => handleMouseEnter('TypeScript')} onMouseLeave={handleMouseLeave} /> },
+    { name: 'Node.js', icon: <SiNodedotjs size={35} onMouseEnter={() => handleMouseEnter('Node.js')} onMouseLeave={handleMouseLeave} /> },
+    { name: 'React', icon: <SiReact size={35} onMouseEnter={() => handleMouseEnter('React')} onMouseLeave={handleMouseLeave} /> },
+    { name: 'Next.js', icon: <SiNextdotjs size={35} onMouseEnter={() => handleMouseEnter('Next.js')} onMouseLeave={handleMouseLeave} /> },
+    { name: 'MongoDB', icon: <SiMongodb size={35} onMouseEnter={() => handleMouseEnter('MongoDB')} onMouseLeave={handleMouseLeave} /> },
+  ];
 
   return (
     <div
@@ -101,7 +139,6 @@ export const BentoGridItem = ({
             <img
               src={spareImg}
               alt={spareImg}
-              //   width={220}
               className="object-cover object-center w-full h-full"
             />
           )}
@@ -131,34 +168,23 @@ export const BentoGridItem = ({
 
           {/* Tech stack list div */}
           {id === 3 && (
-            <div className="flex gap-1 lg:gap-5 w-fit absolute -right-3 lg:-right-2">
-              {/* tech stack lists */}
-              <div className="flex flex-col gap-3 md:gap-3 lg:gap-8">
-                {leftLists.map((item, i) => (
+            <div className='grid grid-cols-4 grid-rows-2 md:grid-cols-4 lg:grid-cols-2 xl:grid-cols-4 gap-3 lg:gap-2 lg:pr-3 absolute right-16 lg:right-4 xl:top-[30%]'>
+            {icons.map((item) => (
+              <div key={item.name} className='relative w-full'> {/* Added relative for positioning */}
+                {item.icon}
+                {hoveredLogo === item.name && (
                   <span
-                    key={i}
-                    className="lg:py-4 lg:px-3 py-2 px-3 text-xs lg:text-base opacity-50 
-                    lg:opacity-100 rounded-lg text-center bg-[#10132E]"
-                  >
-                    {item}
+                  className='flex fex-1 items-center absolute bg-[#000319] border border-white/[0.1] text-white p-1 px-2 rounded-md -top-10 overflow-hidden'
+                  ref={textWidthRef}
+                >
+                    {item.name}
                   </span>
-                ))}
-                <span className="lg:py-4 lg:px-3 py-4 px-3  rounded-lg text-center bg-[#10132E]"></span>
+                )}
               </div>
-              <div className="flex flex-col gap-3 md:gap-3 lg:gap-8">
-                <span className="lg:py-4 lg:px-3 py-4 px-3  rounded-lg text-center bg-[#10132E]"></span>
-                {rightLists.map((item, i) => (
-                  <span
-                    key={i}
-                    className="lg:py-4 lg:px-3 py-2 px-3 text-xs lg:text-base opacity-50 
-                    lg:opacity-100 rounded-lg text-center bg-[#10132E]"
-                  >
-                    {item}
-                  </span>
-                ))}
-              </div>
-            </div>
-          )}
+            ))}
+          </div>
+)}
+
           {id === 6 && (
             <div className="mt-5 relative">
               <div

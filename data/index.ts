@@ -15,6 +15,7 @@ export const navItems = [
       titleClassName: "justify-end",
       img: "/b1.svg",
       spareImg: "",
+      specialClassName: ''
     },
     {
       id: 2,
@@ -25,16 +26,18 @@ export const navItems = [
       titleClassName: "justify-start",
       img: "",
       spareImg: "",
+      specialClassName: ''
     },
     {
       id: 3,
-      title: "My tech stack",
+      title: "",
       description: "I constantly try to improve",
       className: "lg:col-span-2 md:col-span-3 md:row-span-2",
       imgClassName: "",
       titleClassName: "justify-center",
       img: "",
       spareImg: "",
+      specialClassName: 'max-w-45',
     },
     {
       id: 4,
@@ -45,6 +48,7 @@ export const navItems = [
       titleClassName: "justify-start",
       img: "/grid.svg",
       spareImg: "/b4.svg",
+      specialClassName: ''
     },
   
     {
@@ -56,6 +60,7 @@ export const navItems = [
       titleClassName: "justify-center md:justify-start lg:justify-center",
       img: "/b5.svg",
       spareImg: "/grid.svg",
+      specialClassName: ''
     },
     {
       id: 6,
@@ -66,6 +71,7 @@ export const navItems = [
       titleClassName: "justify-center md:max-w-full max-w-60 text-center",
       img: "",
       spareImg: "",
+      specialClassName: ''
     },
   ];
   
