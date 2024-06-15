@@ -159,7 +159,7 @@ export const BentoGridItem = ({
             {description}
           </div>
           <div
-            className={`font-sans text-lg lg:text-3xl max-w-96 font-bold z-10`}
+            className={`font-sans text-lg max-w-96 lg:text-3xl font-bold z-10`}
           >
             {title}
           </div>
@@ -170,11 +170,11 @@ export const BentoGridItem = ({
           {id === 3 && (
             <div className='grid grid-cols-4 grid-rows-2 md:grid-cols-4 lg:grid-cols-2 xl:grid-cols-4 gap-3 lg:gap-2 lg:pr-3 absolute right-16 lg:right-4 xl:top-[30%]'>
             {icons.map((item) => (
-              <div key={item.name} className='relative w-full'> {/* Added relative for positioning */}
+              <div key={item.name} className='relative w-full z-50'> {/* Added relative for positioning */}
                 {item.icon}
                 {hoveredLogo === item.name && (
                   <span
-                  className='flex fex-1 items-center absolute bg-[#000319] border border-white/[0.1] text-white p-1 px-2 rounded-md -top-10 overflow-hidden'
+                  className='flex fex-1 items-center absolute bg-[#000319] border border-white/[0.1] text-white lg:right-2 p-1 px-2 rounded-md -top-10 overflow-hidden'
                   ref={textWidthRef}
                 >
                     {item.name}
@@ -196,7 +196,7 @@ export const BentoGridItem = ({
 
               <MagicButton
                 title={copied ? "Email is Copied!" : "Copy my email address"}
-                icon={<IoCopyOutline />}
+                icon={<IoCopyOutline/>}
                 position="left"
                 handleClick={handleCopy}
                 otherClasses="!bg-[#161A31]"

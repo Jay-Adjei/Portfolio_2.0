@@ -96,7 +96,7 @@ export const TextRevealCard = ({
           className="absolute z-20  will-change-transform"
         >
           <p
-            className="flex justify-center items-center text-base text-center leading-10 px-3 lg:max-w-6xl max-sm:text-[10px] max-lg:text-[1rem] lg:text-[1.5rem] py-10 font-bold text-white bg-clip-text text-transparent bg-gradient-to-b from-white to-neutral-300"
+            className="flex justify-center items-center text-base text-center leading-10 px-3 lg:max-w-6xl max-sm:text-[14px] max-sm:leading-5 max-lg:text-[1rem] lg:text-[1.5rem] py-10 font-bold text-white bg-clip-text text-transparent bg-gradient-to-b from-white to-neutral-300"
           >
             {revealText}
           </p>
@@ -112,7 +112,7 @@ export const TextRevealCard = ({
         ></motion.div>
 
         <div className=" overflow-hidden [mask-image:linear-gradient(to_bottom,transparent,white,transparent)]">
-          <p className="text-base max-sm:text-[1rem] max-lg:text-[2rem] lg:text-[3rem] py-10 font-bold bg-clip-text text-transparent bg-[#232225]">
+          <p className="text-base max-sm:text-[1.5rem] max-lg:text-[2rem] lg:text-[3rem] py-10 font-bold bg-clip-text text-transparent bg-[#232225]">
             {text}
           </p>
           <MemoizedStars />
