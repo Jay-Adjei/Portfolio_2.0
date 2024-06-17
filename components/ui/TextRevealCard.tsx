@@ -66,7 +66,7 @@ export const TextRevealCard = ({
       onTouchEnd={mouseLeaveHandler}
       onTouchMove={touchMoveHandler}
       ref={cardRef}
-      className={cn('w-full border border-white/[0.1] h-[20rem] rounded-lg p-8 relative overflow-hidden hover:shadow-xl mx-auto mb-10', className
+      className={cn('w-full border border-white/[0.1] h-[20rem] rounded-xl p-8 relative overflow-hidden hover:shadow-xl mx-auto mb-10', className
       )}
       style={{
         background: 'rgb(22,19,70)',
