@@ -91,7 +91,7 @@ export const BentoGridItem = ({
     setHoveredLogo('');
   };
 
-const textWidthRef = useRef(null);
+const textWidthRef = useRef<HTMLSpanElement>(null);
   const [textWidth, setTextWidth] = useState(0);
 
   useEffect(() => {
