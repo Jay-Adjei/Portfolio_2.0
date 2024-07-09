@@ -83,7 +83,7 @@ export const BentoGridItem = ({
   }
   const [hoveredLogo, setHoveredLogo] = useState('');
   
-  const handleMouseEnter = ({logoName}:{logoName:string}) => {
+  const handleMouseEnter = (logoName: string) => {
     setHoveredLogo(logoName);
   };
 
