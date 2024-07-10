@@ -57,7 +57,6 @@ export const BentoGridItem = ({
 }) => {
 
   const [copied, setCopied] = useState(false);
-  const textWidthRef = useRef(null);
 
   const defaultOptions = {
     loop: copied,
@@ -84,7 +83,7 @@ export const BentoGridItem = ({
   }
   const [hoveredLogo, setHoveredLogo] = useState('');
   
-  const handleMouseEnter = (logoName) => {
+  const handleMouseEnter = (logoName: string) => {
     setHoveredLogo(logoName);
   };
 
@@ -92,12 +91,21 @@ export const BentoGridItem = ({
     setHoveredLogo('');
   };
 
+const textWidthRef = useRef<HTMLSpanElement>(null);
+  const [textWidth, setTextWidth] = useState(0);
+
   useEffect(() => {
-    if (textWidthRef.current) { // Check within useEffect
+    if (textWidthRef.current) {
       const textWidth = textWidthRef.current.clientWidth;
-      textWidthRef.current.style.width = `${textWidth}px`;
+      setTextWidth(textWidth);
     }
   }, [hoveredLogo]);
+
+  useEffect(() => {
+    if (textWidthRef.current) {
+      textWidthRef.current.style.width = `${textWidth}px`;
+    }
+  }, [textWidth]);
 
   const icons = [
     { name: 'HTML', icon: <SiHtml5 size={35} onMouseEnter={() => handleMouseEnter('HTML')} onMouseLeave={handleMouseLeave} /> },
