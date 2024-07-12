@@ -37,7 +37,7 @@ const RecentProjects = () => {
                             {project.iconLists && (
                                 <CardItem translateZ='60' className='flex pl-3 '>
                                 {project.iconLists.map((icon, index) => (
-                                    <div key={icon} className={`flex items-center justify-center border border-gray-500 rounded-full object-contain bg-gradient-to-r from-black via-black-200 to-black relative -left-${index * 3} [index+5]`}
+                                    <div key={icon} className={`flex items-center justify-center border border-gray-500 rounded-full object-contain bg-gradient-to-r from-black via-black-200 to-black relative `}
                                     style={{ transform: `translateX(-${2+index * 8}px)` }} >
                                     <Image
                                     src={icon}
@@ -51,7 +51,7 @@ const RecentProjects = () => {
                             </CardItem>
                             )}
                             <CardItem as={Link} translateZ='60' href={project.link} target='__blank' className={`flex relative right-3 shadow-xl text-sm bg-white text-black rounded-xl mx-auto p-3 pr-3 m-${project.iconLists? '0' : 'auto'}`}>
-                                Check out my code
+                                Visit
                                 <FaArrowRightLong className='pl-2' size={20}/>
                             </CardItem>
                             </div>

@@ -108,14 +108,14 @@ const textWidthRef = useRef<HTMLSpanElement>(null);
   }, [textWidth]);
 
   const icons = [
-    { name: 'HTML', icon: <SiHtml5 size={35} onMouseEnter={() => handleMouseEnter('HTML')} onMouseLeave={handleMouseLeave} /> },
-    { name: 'TailwindCSS', icon: <SiTailwindcss onMouseEnter={() => handleMouseEnter('TailwindCSS')} onMouseLeave={handleMouseLeave} size={35} /> },
-    { name: 'JavaScript', icon: <SiJavascript size={35} onMouseEnter={() => handleMouseEnter('JavaScript')} onMouseLeave={handleMouseLeave} /> },
-    { name: 'TypeScript', icon: <SiTypescript size={35} onMouseEnter={() => handleMouseEnter('TypeScript')} onMouseLeave={handleMouseLeave} /> },
-    { name: 'Node.js', icon: <SiNodedotjs size={35} onMouseEnter={() => handleMouseEnter('Node.js')} onMouseLeave={handleMouseLeave} /> },
-    { name: 'React', icon: <SiReact size={35} onMouseEnter={() => handleMouseEnter('React')} onMouseLeave={handleMouseLeave} /> },
-    { name: 'Next.js', icon: <SiNextdotjs size={35} onMouseEnter={() => handleMouseEnter('Next.js')} onMouseLeave={handleMouseLeave} /> },
-    { name: 'MongoDB', icon: <SiMongodb size={35} onMouseEnter={() => handleMouseEnter('MongoDB')} onMouseLeave={handleMouseLeave} /> },
+    { name: 'HTML', icon: <SiHtml5 size={30} onMouseEnter={() => handleMouseEnter('HTML')} onMouseLeave={handleMouseLeave} /> },
+    { name: 'TailwindCSS', icon: <SiTailwindcss onMouseEnter={() => handleMouseEnter('TailwindCSS')} onMouseLeave={handleMouseLeave} size={30} /> },
+    { name: 'JavaScript', icon: <SiJavascript size={30} onMouseEnter={() => handleMouseEnter('JavaScript')} onMouseLeave={handleMouseLeave} /> },
+    { name: 'TypeScript', icon: <SiTypescript size={30} onMouseEnter={() => handleMouseEnter('TypeScript')} onMouseLeave={handleMouseLeave} /> },
+    { name: 'Node.js', icon: <SiNodedotjs size={30} onMouseEnter={() => handleMouseEnter('Node.js')} onMouseLeave={handleMouseLeave} /> },
+    { name: 'React', icon: <SiReact size={30} onMouseEnter={() => handleMouseEnter('React')} onMouseLeave={handleMouseLeave} /> },
+    { name: 'Next.js', icon: <SiNextdotjs size={30} onMouseEnter={() => handleMouseEnter('Next.js')} onMouseLeave={handleMouseLeave} /> },
+    { name: 'MongoDB', icon: <SiMongodb size={30} onMouseEnter={() => handleMouseEnter('MongoDB')} onMouseLeave={handleMouseLeave} /> },
   ];
 
   return (
@@ -176,7 +176,7 @@ const textWidthRef = useRef<HTMLSpanElement>(null);
 
           {/* Tech stack list div */}
           {id === 3 && (
-            <div className='grid grid-cols-4 grid-rows-2 md:grid-cols-4 lg:grid-cols-2 xl:grid-cols-4 gap-3 lg:gap-2 lg:pr-3 absolute right-16 lg:right-4 xl:top-[30%]'>
+            <div className='grid grid-cols-4 grid-rows-2 md:grid-cols-4 lg:grid-cols-2 xl:grid-cols-4 gap-3 lg:gap-2 lg:pr-3 absolute right-16 max-sm:right-1 md:right-3 lg:right-4 xl:top-[30%]'>
             {icons.map((item) => (
               <div key={item.name} className='relative w-full z-50'> {/* Added relative for positioning */}
                 {item.icon}
