@@ -1,8 +1,8 @@
 import React from 'react'
 
-const MagicButton = ({title, icon, position, handleClick, widthClass, marginClass}:
+const MagicButton = ({title, icon, position, handleClick,otherClasses, widthClass, marginClass}:
     {title: string; icon: React.ReactNode, position: string; handleClick?:
-    () => void; widthClass?: string; marginClass?: string;
+    () => void; widthClass?: string; marginClass?: string; otherClasses?: string;
     }
 ) => {
   return (
